@@ -229,14 +229,6 @@
         display: none !important;
     }
 
-    /* Mobile partner logos block between hero and stats */
-    .hero-mobile-partners {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 1.5rem 1rem;
-    }
     .hero-mobile-supported-by {
         color: var(--grey-600-main);
         margin: 0;
@@ -350,9 +342,19 @@
     }
 }
 
-/* Mobile-only partner logos in hero — hidden on desktop */
+/* Mobile-only partner logos — hidden on desktop always */
 .hero-mobile-partners {
-    display: none;
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .hero-mobile-partners {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1.5rem 1rem;
+    }
 }
 
 /* Hero headline — "VSWear:" in blue */
