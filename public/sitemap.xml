@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/VS_Wear_website/footer/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/how-to/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/team/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/user-trust/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/nav/</loc>
+  </url><url>
+    <loc>http://localhost:1313/VS_Wear_website/product/</loc>
+  </url>
+</urlset>

@@ -1,0 +1,88 @@
+/* Taller navbar to fit all logos */
+.navbar,
+.navbar_container {
+    height: 11rem !important;
+}
+
+.navbar {
+    margin-top: -11rem !important;
+}
+
+.transparent-navbar_spacer {
+    height: 11rem !important;
+}
+
+/* Left-side logos (Oxford / Skull Base) */
+.logo-wrapper img {
+    height: 80px !important;
+}
+
+/* Navbar partner logos (right side) */
+.navbar_partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.navbar_partner-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar_partner-logo.is-bana {
+    height: 110px;
+}
+
+@media (max-width: 768px) {
+    .navbar_partner-logos {
+        display: none;
+    }
+}
+
+/* Hero banner two-column layout */
+.hero-two-col {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-text-col {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.hero-logos-col {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-partner-logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .hero-two-col {
+        flex-direction: column;
+    }
+
+    .hero-logos-col {
+        flex-direction: row;
+        flex: unset;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-partner-logo {
+        max-width: 140px;
+    }
+}

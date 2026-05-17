@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VS-WEAR</title>
+    <link>http://localhost:1313/VS_Wear_website/</link>
+    <description>Recent content on VS-WEAR</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/VS_Wear_website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/VS_Wear_website/footer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/footer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How to get involved</title>
+      <link>http://localhost:1313/VS_Wear_website/how-to/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/how-to/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Meet the team</title>
+      <link>http://localhost:1313/VS_Wear_website/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/team/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>University of Oxford · Ethics Approved · Pilot Study Completed</title>
+      <link>http://localhost:1313/VS_Wear_website/user-trust/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/user-trust/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VS-WEAR Navigation</title>
+      <link>http://localhost:1313/VS_Wear_website/nav/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/nav/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VS-WEAR: Product introduction</title>
+      <link>http://localhost:1313/VS_Wear_website/product/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/VS_Wear_website/product/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

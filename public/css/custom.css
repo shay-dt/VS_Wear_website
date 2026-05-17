@@ -1,0 +1,217 @@
+/* Taller navbar to fit all logos */
+.navbar,
+.navbar_container {
+    height: 11rem !important;
+}
+
+.navbar {
+    margin-top: -11rem !important;
+}
+
+.transparent-navbar_spacer {
+    height: 11rem !important;
+}
+
+
+/* Navbar partner logos (right side) */
+.navbar_partner-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.navbar_supported-by {
+    margin: 0;
+    color: var(--grey-600-main);
+}
+
+.navbar_partner-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar_partner-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar_partner-logo.is-bana {
+    height: 110px;
+}
+
+@media (max-width: 768px) {
+    .navbar_partner-logos {
+        display: none;
+    }
+}
+
+/* How to get involved section */
+.howto-section {
+    background: linear-gradient(135deg, #dce6f9 0%, #d4eaf6 100%);
+    border-radius: 1.5rem;
+    margin: 2rem 1rem;
+}
+
+/* 4 cards side by side */
+.howto-cards-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    position: relative;
+}
+
+/* Connecting line behind cards */
+.howto-cards-row::before {
+    content: '';
+    position: absolute;
+    top: 2.25rem;
+    left: 2.25rem;
+    right: 2.25rem;
+    height: 2px;
+    background: linear-gradient(90deg, #4F6FE8, #7BA7E8);
+    z-index: 0;
+}
+
+.howto-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(79, 111, 232, 0.08);
+    border-top: 3px solid #4F6FE8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle text link instead of a loud button */
+.howto-register-link {
+    display: inline-block;
+    color: #4F6FE8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #4F6FE8;
+    padding-bottom: 1px;
+}
+
+.howto-register-link:hover {
+    opacity: 0.75;
+}
+
+@media (max-width: 900px) {
+    .howto-cards-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .howto-cards-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* "Meet the team" button — white with border */
+.hero-meet-btn {
+    background: white !important;
+    color: #1a1a2e !important;
+    border: 1.5px solid #d0d7e8 !important;
+    box-shadow: none !important;
+}
+
+.hero-meet-btn:hover {
+    background: #f4f6fb !important;
+}
+
+/* Team section */
+.team-section {
+    background: white;
+}
+
+.team-cards-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card .howto-register-link {
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.team-card-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #eef2fb;
+}
+
+.team-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .team-cards-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .team-cards-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact CTA section */
+.cta-section {
+    background: linear-gradient(135deg, #dce6f9 0%, #d4eaf6 100%);
+    border-radius: 1.5rem;
+    margin: 2rem 1rem;
+    padding: 4rem 0;
+}
+
+.cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.cta-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cta-doc-link {
+    font-size: 1rem;
+}
+
+/* Hero headline — "VSWear:" in blue */
+.hero-vswear-title {
+    color: #4F6FE8;
+}
+
+/* Hero buttons side by side */
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
