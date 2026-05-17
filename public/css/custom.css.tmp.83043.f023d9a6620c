@@ -220,39 +220,16 @@
     .logo-wrapper {
         gap: 0.5rem !important;
     }
-    /* Both left logos visible on mobile, just smaller */
-    .logo-wrapper img {
-        height: 45px !important;
+    /* Show only the Oxford/NIHR logo on mobile, hide Skull Base */
+    .logo-wrapper img:first-child {
+        height: 55px !important;
     }
-    /* Hide right-side partner logos from navbar on mobile */
-    .navbar_partner-logos {
+    .logo-wrapper img:last-child {
         display: none !important;
     }
-
-    /* Mobile partner logos block below hero text */
-    .hero-mobile-partners {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        margin-top: 1.5rem;
-    }
-    .hero-mobile-supported-by {
-        color: var(--grey-600-main);
-        margin: 0;
-    }
-    .hero-mobile-partner-logos {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .hero-mobile-partner-logo {
-        height: 40px;
-        width: auto;
-        object-fit: contain;
-    }
-    .hero-mobile-partner-logo:last-child {
-        height: 65px;
+    /* Hide partner logos on mobile (already hidden but ensure) */
+    .navbar_partner-logos {
+        display: none !important;
     }
 
     /* Hero heading */
@@ -348,11 +325,6 @@
         flex-direction: column !important;
         gap: 1.5rem;
     }
-}
-
-/* Mobile-only partner logos in hero — hidden on desktop */
-.hero-mobile-partners {
-    display: none;
 }
 
 /* Hero headline — "VSWear:" in blue */
