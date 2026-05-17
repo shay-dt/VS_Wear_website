@@ -229,13 +229,13 @@
         display: none !important;
     }
 
-    /* Mobile partner logos block below hero text */
+    /* Mobile partner logos block between hero and stats */
     .hero-mobile-partners {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
-        margin-top: 1.5rem;
+        padding: 1.5rem 1rem;
     }
     .hero-mobile-supported-by {
         color: var(--grey-600-main);
