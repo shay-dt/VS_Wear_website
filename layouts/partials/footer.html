@@ -1,0 +1,95 @@
+{{ $footer := .Site.GetPage "footer" }}
+
+<footer id="footer" class="footer-section">
+    <div class="page-padding">
+        <div class="container-large">
+            <div class="grid-12col-base row-gap-0rem is-align-top">
+                <div id="w-node-_5834ca98-ddcd-32c3-f6d6-9632f459ad4e-d671f29a" class="show-tablet">
+                    <div class="padding-vertical padding-xxxlarge is-fixed">
+                        <div class="opacity-20">
+                            <div color="" vertical="false" class="divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="w-node-_5834ca98-ddcd-32c3-f6d6-9632f459ad51-d671f29a"
+                     class="flex-vertical-left flex-gap-1-5rem is-center-tablet">
+                    <a href="/" aria-current="page" class="logo-medium w-inline-block">
+                        <div class="synthesia-logo-wrapper">
+                            <img style="height: 80px; width: auto;" src="{{ "img/oxford-skull-base-logo.png" | absURL }}" alt="Oxford Skull Base Unit" class="height-inherit">
+                        </div>
+                    </a>
+
+                    <div style="height: 1.5rem;"></div>
+
+                    <div class="max-width-37rem">
+                        <div class="text-align-left is-center-tablet">
+                            <p class="paragraph-small">{{ $footer.Params.description }}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-child-stretch">
+                        <div class="opacity-20">
+                            <div color="" vertical="false" class="divider"></div>
+                        </div>
+                    </div>
+                    <p class="label-regular text-align-center-tablet">University of Oxford &nbsp;·&nbsp; Ethics reference: MS IDREC 1000079</p>
+                </div>
+
+                {{ $links := $footer.Params.links }}
+                {{ $categories := dict }}
+
+                {{ range $index, $link := $links }}
+                {{ $linkParts := split $link ", " }}
+                {{ $category := index $linkParts 0 }}
+                {{ if not (index $categories $category) }}
+                {{ $categories = merge $categories (dict $category (slice $link)) }}
+                {{ else }}
+                {{ $currentCategoryLinks := index $categories $category }}
+                {{ $updatedLinks := append $currentCategoryLinks (slice $link) }}
+                {{ $categories = merge $categories (dict $category $updatedLinks) }}
+                {{ end }}
+                {{ end }}
+
+                {{ $gridRowStart := 1 }}
+                {{ $gridRowEnd := 2 }}
+                {{ $gridColumnStart := 9 }}
+                {{ $gridColumnEnd := 11 }}
+
+                {{ range $category, $linksInCategory := $categories }}
+                <div class="flex-vertical flex-gap-075rem" style="grid-area: {{ $gridRowStart }}/{{ $gridColumnStart }}/{{ $gridRowEnd }}/{{ $gridColumnEnd }};">
+                    <div class="text-color-indigo-400">
+                        <div class="paragraph-medium is-medium">{{ $category }}</div>
+                    </div>
+                    {{ range $index, $link := $linksInCategory }}
+                    {{ $linkParts := split $link ", " }}
+                    {{ $title := index $linkParts 1 }}
+                    {{ $url := index $linkParts 2 }}
+                    {{ $isReady := index $linkParts 3 }}
+                    {{ if eq $isReady "true" }}
+                    <a href="{{ $url }}" target="_blank" class="paragraph-small">{{ $title }}</a>
+                    {{ else }}
+                    <a onclick="showToast()" class="paragraph-small">{{ $title }}</a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                {{ $gridColumnStart = add $gridColumnStart 2 }}
+                {{ $gridColumnEnd = add $gridColumnEnd 2 }}
+                {{ end }}
+
+            </div>
+            <div class="hide-tablet">
+                <div class="padding-top padding-xxlarge">
+                    <div class="padding-bottom padding-small">
+                        <div class="opacity-20">
+                            <div color="" vertical="false" class="divider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-space-between is-vertical-tablet flex-gap-1-5rem">
+                <p class="label-regular">© {{ now.Format "2006" }} {{ .Site.Title }}</p>
+                <div class="footerv2_social-wrapper"></div>
+            </div>
+        </div>
+    </div>
+</footer>

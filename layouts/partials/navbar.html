@@ -1,0 +1,58 @@
+{{ $nav := .Site.GetPage "nav" }}
+
+<nav id="nav" class="navbar">
+    <div class="navbar_container">
+        <div class="z-9999 flex-child-fixed" style="margin-top: -5px;">
+            <div class="navbar_logo-dark">
+                <a href="/" aria-current="page" class="logo-medium w-inline-block">
+                    <div class="logo-wrapper" style="display: flex; align-items: center; gap: 1rem;">
+                        <img height="160" alt="University of Oxford / NIHR Logo" src="{{ "img/uni_ox_NIHR_BRC_logo.png" | absURL }}" loading="eager" style="height: 160px; width: auto;">
+                        <img height="160" alt="Oxford Skull Base Unit Logo" src="{{ "img/oxford-skull-base-logo.png" | absURL }}" loading="eager" style="height: 160px; width: auto;">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="navbar_content-wrapper">
+            <div class="navbar_menu-items-wrapper">
+                {{ range $link := $nav.Params.left_links }}
+                {{ $parts := split $link "," }}
+                {{ if eq (len $parts) 3 }}
+                {{ $title := strings.TrimSpace (index $parts 0) }}
+                {{ $url := strings.TrimSpace (index $parts 1) }}
+
+                <div class="navbar_dropdown-element-wrapper">
+                    <a href="{{ $url }}" class="navbar_dropdown-toggle w-inline-block">
+                        <div class="paragraph-medium" title="{{ $title }}">{{ $title }}</div>
+                    </a>
+                </div>
+                {{ end }}
+                {{ end }}
+
+                <div class="navbar_bg-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Right: partner logos -->
+        <div class="navbar_partner-logos">
+            <p class="paragraph-medium navbar_supported-by">supported by:</p>
+            <div class="navbar_partner-logo-row">
+                <img src="{{ "img/brainstrust-logo.png" | absURL }}" alt="brainstrust" class="navbar_partner-logo">
+                <img src="{{ "img/BANA_logo.png" | absURL }}" alt="BANA" class="navbar_partner-logo is-bana">
+            </div>
+        </div>
+
+        <div class="show-tablet">
+            <div class="z-9999">
+                <div class="flex flex-centre-align flex-gap-1-5rem">
+                    <div class="navbar_burger-icon-wrapper">
+                        <div class="navbar_burger-menu-stroke"></div>
+                        <div class="navbar_burger-menu-stroke"></div>
+                        <div class="navbar_burger-menu-stroke"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>

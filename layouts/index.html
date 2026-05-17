@@ -1,0 +1,185 @@
+{{ define "main" }}
+{{ $product := .Site.GetPage "product" }}
+{{ $userTrust := .Site.GetPage "user-trust" }}
+{{ $howToPage := .Site.GetPage "how-to" }}
+{{ $teamPage := .Site.GetPage "team" }}
+
+<main class="main-wrapper">
+    <header class="position-relative">
+        <div class="background-image-container">
+            <img src="{{ "img/banner-bg.svg" | absURL }}" loading="eager" alt="" class="background-cover-image">
+        </div>
+        <div class="transparent-navbar_spacer"></div>
+        <div class="page-padding">
+            <div class="container-large z-1">
+                <div class="padding-vertical padding-xlarge is-fixed is-bottom-2rem">
+                    <div class="container-small">
+                        <div class="text-color-base-dark">
+                            <h1 class="heading-huge">
+                                <span class="hero-vswear-title">{{ $product.Params.tagline }}</span><br>
+                                {{ with $product.Params.highlight }}<span>{{ . }}</span>{{ end }}
+                            </h1>
+                        </div>
+                        <div class="spacer-xsmall"></div>
+                        <div class="rich-text-xlarge w-richtext">
+                            <p>{{ $product.Params.description }}</p>
+                        </div>
+                        <div class="spacer-large"></div>
+                        <div class="hero-buttons">
+                            <a id="free-demo-btn"
+                               freemium-text="{{ $product.Params.freemium_text }}"
+                               href="{{ $product.Params.button_link | default "#how-to" }}"
+                               class="button is-large w-inline-block">
+                                <div>{{ $product.Params.button_text | default "Register your interest" }}</div>
+                                <div class="icon-16 w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                         viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet"
+                                         aria-hidden="true" role="img">
+                                        <path d="M1 7.72656H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M9.27246 2L14.9997 7.72727L9.27246 13.4545" stroke="currentColor" stroke-width="1.27273" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#team" class="button is-large w-inline-block hero-meet-btn">
+                                <div>Meet the team</div>
+                            </a>
+                        </div>
+                        <div class="spacer-large"></div>
+                        <div class="text-color-grey-600">
+                            <div class="hero_disclaimer-container">
+                                <p class="paragraph-small hide-mobile-landscape">{{ $product.Params.claimer1 }}</p>
+                                <div hero-divider="" class="flex-child-stretch hide-mobile-landscape">
+                                    <div color="" vertical="true" class="divider"></div>
+                                </div>
+                                <p class="paragraph-small">{{ $product.Params.claimer2 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="user-trust">
+        <div class="padding-vertical padding-xxhuge">
+            <div class="z-3">
+                <div class="page-padding">
+                    <div class="container-large">
+                        <div class="grid-12col-base is-align-bottom">
+                            <div id="w-node-_19ea42c6-8f34-1041-d1a8-ebfb2d3d272f-2d3d2728">
+                                <div class="max-width-56rem">
+                                    <div is-round="false" color="light" class="caption">
+                                        <div class="caption-medium">{{ $userTrust.Params.title }}</div>
+                                    </div>
+                                    <div class="spacer-xxxsmall"></div>
+                                    <div class="text-color-base-dark">
+                                        <h1 class="heading-large">
+                                            <span>{{ $userTrust.Params.trusted_count }}</span>
+                                        </h1>
+                                        <h2 class="heading-medium">
+                                            <span>{{ $userTrust.Params.websites_created }}</span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to" class="howto-section">
+        <div class="page-padding">
+            <div class="container-large">
+                <div class="padding-vertical padding-xlarge">
+
+                    <!-- Title -->
+                    <div class="text-align-center">
+                        <div is-round="false" color="light" class="caption">
+                            <div class="caption-medium">{{ $howToPage.Params.subtitle }}</div>
+                        </div>
+                        <div class="spacer-xsmall"></div>
+                        <h2 class="heading-large text-color-base-dark">{{ $howToPage.Params.title }}</h2>
+                    </div>
+
+                    <div class="spacer-xxxlarge"></div>
+
+                    <!-- 4 step cards in a row -->
+                    <div class="howto-cards-row">
+                        {{ range $step := $howToPage.Params.steps }}
+                        {{ $parts := split $step " | " }}
+                        {{ $step_number := strings.TrimSpace (index $parts 0) }}
+                        {{ $title := strings.TrimSpace (index $parts 1) }}
+                        {{ $description := strings.TrimSpace (index $parts 2) }}
+                        <div class="howto-card">
+                            <div class="marketing-icon is-small is-indigo is-indigo-600">
+                                <div class="paragraph-large is-medium">{{ $step_number }}</div>
+                            </div>
+                            <div class="spacer-tiny"></div>
+                            <h3 class="paragraph-xlarge is-medium text-color-base-dark">{{ $title }}</h3>
+                            <div class="spacer-tiny"></div>
+                            <p class="label-regular">{{ $description }}</p>
+                            {{ if eq $step_number "1" }}
+                            <div class="spacer-small"></div>
+                            <a href="https://docs.google.com/forms/d/1faYeHK_hfeMAZ-Wt8JHsSK_lMAg3UbQNyOqVVVbHX-4/edit"
+                               target="_blank" class="howto-register-link">
+                                Register here →
+                            </a>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="page-padding">
+            <div class="container-large">
+                <div class="padding-vertical padding-xlarge">
+                    <h2 class="heading-large text-color-base-dark">{{ $teamPage.Params.title }}</h2>
+                    <div class="spacer-large"></div>
+                    <div class="team-cards-row">
+                        {{ range $teamPage.Params.members }}
+                        <div class="team-card">
+                            <div class="team-card-img-wrap">
+                                <img src="{{ .image | absURL }}" alt="{{ .name }}" class="team-card-img">
+                            </div>
+                            <div class="spacer-xsmall"></div>
+                            <h3 class="paragraph-xlarge is-medium text-color-base-dark">{{ .name }}</h3>
+                            <p class="paragraph-small text-color-grey-600">{{ .role }}</p>
+                            <div class="spacer-tiny"></div>
+                            <p class="label-regular">{{ .bio }}</p>
+                            <div class="spacer-tiny"></div>
+                            <a href="{{ .link }}" target="_blank" class="howto-register-link">View profile →</a>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="page-padding">
+            <div class="container-large">
+                <div class="cta-inner">
+                    <h2 class="heading-medium text-color-base-dark">Interested in finding out more?</h2>
+                    <div class="spacer-small"></div>
+                    <div class="cta-links">
+                        <a href="mailto:shay.sivanathan@ouh.nhs.uk" class="howto-register-link cta-doc-link">Email our research team →</a>
+                        <a href="{{ "poster.pdf" | absURL }}" target="_blank" class="howto-register-link cta-doc-link">Click here to see our poster →</a>
+                        <a href="{{ "PIS.pdf" | absURL }}" target="_blank" class="howto-register-link cta-doc-link">Click here for participant information sheet →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div color="" vertical="false" class="divider"></div>
+
+</main>
+{{ end }}

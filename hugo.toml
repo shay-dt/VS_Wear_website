@@ -1,0 +1,4 @@
+baseURL = 'https://shay-dt.github.io/VS_Wear_website/'
+locale = 'en-us'
+title = 'VS-WEAR'
+theme = 'theme-long-teng'
