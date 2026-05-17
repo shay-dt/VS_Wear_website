@@ -220,8 +220,16 @@
     .logo-wrapper {
         gap: 0.5rem !important;
     }
-    .logo-wrapper img {
+    /* Show only the Oxford/NIHR logo on mobile, hide Skull Base */
+    .logo-wrapper img:first-child {
         height: 55px !important;
+    }
+    .logo-wrapper img:last-child {
+        display: none !important;
+    }
+    /* Hide partner logos on mobile (already hidden but ensure) */
+    .navbar_partner-logos {
+        display: none !important;
     }
 
     /* Hero heading */
