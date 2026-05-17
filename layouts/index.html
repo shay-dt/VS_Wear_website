@@ -119,7 +119,11 @@
                             <div class="spacer-tiny"></div>
                             <h3 class="paragraph-xlarge is-medium text-color-base-dark">{{ $title }}</h3>
                             <div class="spacer-tiny"></div>
+                            {{ if eq $step_number "3" }}
+                            <p class="label-regular">Go about your normal daily activities while wearing the device and complete one short questionnaire. <a href="https://www.youtube.com/watch?v=u9uf5rQ-uaw" target="_blank" class="howto-register-link">Click here</a> for a short video showing how to put the device on.</p>
+                            {{ else }}
                             <p class="label-regular">{{ $description }}</p>
+                            {{ end }}
                             {{ if eq $step_number "1" }}
                             <div class="spacer-small"></div>
                             <a href="https://docs.google.com/forms/d/1faYeHK_hfeMAZ-Wt8JHsSK_lMAg3UbQNyOqVVVbHX-4/edit"
