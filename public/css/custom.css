@@ -342,6 +342,55 @@
     }
 }
 
+/* Eligibility section */
+.eligibility-section {
+    background: white;
+}
+
+.eligibility-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.eligibility-col {
+    background: #f8faff;
+    border-radius: 1rem;
+    padding: 2rem;
+    border-top: 3px solid #4F6FE8;
+}
+
+.eligibility-col--exclude {
+    border-top-color: #e05c6b;
+}
+
+.eligibility-col-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+}
+
+.eligibility-list {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+}
+
+.eligibility-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .eligibility-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Mobile-only partner logos — hidden on desktop always */
 .hero-mobile-partners {
     display: none !important;
