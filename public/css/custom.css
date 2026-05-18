@@ -361,8 +361,8 @@
 }
 
 .eligibility-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 1.5rem;
 }
 
@@ -417,7 +417,7 @@
 
 @media (max-width: 768px) {
     .eligibility-cols {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
     .eligibility-heading {
         font-size: 1.3rem;
