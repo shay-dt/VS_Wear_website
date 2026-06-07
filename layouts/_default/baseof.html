@@ -6,7 +6,10 @@
     <title>{{ .Site.Title }}</title>
 
     <link href="{{ "css/clean.css" | absURL }}" rel="stylesheet" type="text/css">
-    <link href="{{ "css/custom.css" | absURL }}" rel="stylesheet" type="text/css">
+    {{ with resources.Get "css/custom.css" }}
+    {{ $css := . | fingerprint }}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet" type="text/css">
+    {{ end }}
     <link href="{{ "img/fav.png" | absURL }}" rel="shortcut icon" type="image/png">
     <link href="{{ "img/fav.png" | absURL }}" rel="icon" type="image/png">
     <link href="{{ .Permalink }}" rel="canonical">

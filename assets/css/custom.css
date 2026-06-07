@@ -22,6 +22,8 @@
     gap: 0.4rem;
     margin-left: auto;
     flex-shrink: 0;
+    /* Whitespace separation from the institution logos on the left */
+    padding-left: 5rem;
 }
 
 .navbar_supported-by {
@@ -32,7 +34,7 @@
 .navbar_partner-logo-row {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .navbar_partner-logo {
@@ -41,8 +43,18 @@
     object-fit: contain;
 }
 
+.navbar_partner-logo.is-brainstrust {
+    height: 60px;
+}
+
 .navbar_partner-logo.is-bana {
-    height: 110px;
+    height: 150px;
+}
+
+.navbar_partner-logo.is-tbtc {
+    height: 130px;
+    /* JPEG carries extra white padding — trim the visual gap to its neighbour */
+    margin-left: -1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -220,16 +232,34 @@
     .logo-wrapper {
         gap: 0.5rem !important;
     }
-    /* Show only the Oxford/NIHR logo on mobile, hide Skull Base */
-    .logo-wrapper img:first-child {
-        height: 55px !important;
+    /* Both left logos visible on mobile, just smaller */
+    .logo-wrapper img {
+        height: 45px !important;
     }
-    .logo-wrapper img:last-child {
-        display: none !important;
-    }
-    /* Hide partner logos on mobile (already hidden but ensure) */
+    /* Hide right-side partner logos from navbar on mobile */
     .navbar_partner-logos {
         display: none !important;
+    }
+
+    .hero-mobile-supported-by {
+        color: var(--grey-600-main);
+        margin: 0;
+    }
+    .hero-mobile-partner-logos {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .hero-mobile-partner-logo {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+    }
+    .hero-mobile-partner-logo.is-bana {
+        height: 65px;
+    }
+    .hero-mobile-partner-logo.is-tbtc {
+        height: 55px;
     }
 
     /* Hero heading */
@@ -324,6 +354,103 @@
         display: flex !important;
         flex-direction: column !important;
         gap: 1.5rem;
+    }
+}
+
+/* Eligibility section */
+.eligibility-section {
+    background: white;
+}
+
+.eligibility-heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0 0 0.4rem;
+}
+
+.eligibility-subtext {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+.eligibility-cols {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem;
+}
+
+.eligibility-col {
+    background: #f8faff;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    border-left: 4px solid #4F6FE8;
+}
+
+.eligibility-col--exclude {
+    border-left-color: #e05c6b;
+    background: #fff8f8;
+}
+
+.eligibility-col-header {
+    margin-bottom: 1rem;
+}
+
+.eligibility-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    letter-spacing: 0.01em;
+}
+
+.eligibility-badge--include {
+    background: #e8f0fe;
+    color: #3a5dc8;
+}
+
+.eligibility-badge--exclude {
+    background: #fde8ea;
+    color: #c0374a;
+}
+
+.eligibility-list {
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.eligibility-list li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .eligibility-cols {
+        grid-template-columns: 1fr !important;
+    }
+    .eligibility-heading {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile-only partner logos — hidden on desktop always */
+.hero-mobile-partners {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .hero-mobile-partners {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1.5rem 1rem;
     }
 }
 
